@@ -6,7 +6,7 @@ jdk: openjdk8
 
 # install and maven install
 install: true
-script: ./mvnw clean install
+
 
 # 提高构建速度
 cache:
