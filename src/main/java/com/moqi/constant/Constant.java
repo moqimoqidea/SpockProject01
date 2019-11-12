@@ -25,8 +25,14 @@ public class Constant {
     public static final String COLON = ":";
 
     /**
-     * 竖线
+     * 竖线（带转义）
      */
-    public static final String VERTICAL_BAR = "\\|";
+    @SuppressWarnings("unused")
+    public static final String ESCAPE_VERTICAL_BAR = "\\|";
+
+    /**
+     * 竖线（不带转义）
+     */
+    public static final String VERTICAL_BAR = "|";
 
 }
