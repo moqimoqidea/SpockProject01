@@ -1,7 +1,11 @@
 package com.moqi.function;
 
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static com.moqi.constant.Constant.*;
+import static com.moqi.tool.Tool.checkStringIllegal;
 
 /**
  * 取出在指定字符串中指定 key 的的值，格式如下
@@ -18,32 +22,23 @@ import static com.moqi.constant.Constant.*;
 public class FindKeyUdf {
 
     /**
-     * 数组最小长度
+     * 正则匹配式后缀（到竖线结束或者到字符串结尾结束）
      */
-    private static final int ARRAY_MIN_LENGTH = 2;
+    private static final String REGEX_SUFFIX = "(.*?\\||.*?$)";
 
     public static String evaluate(String string, String key) {
+
+        if (checkStringIllegal(string) || checkStringIllegal(key)) {
+            return EMPTY_STRING;
+        }
+
         // key 加冒号
         String keyWithColon = key + COLON;
+        Matcher matcher = Pattern.compile(keyWithColon + REGEX_SUFFIX).matcher(string);
 
-        if (string == null || EMPTY_STRING.equals(string) || !string.contains(keyWithColon)) {
-            return EMPTY_STRING;
-        }
-
-        if (string.split(keyWithColon).length < ARRAY_MIN_LENGTH) {
-            return EMPTY_STRING;
-        }
-
-        // key 的长度，提高匹配速度
-        int keyLength = key.length();
-
-        for (String subString : string.split(VERTICAL_BAR)) {
-            String[] innerArray = subString.split(COLON);
-            // 顺序根据匹配效率而定
-            if (keyLength == innerArray[0].length() && ARRAY_MIN_LENGTH == innerArray.length && key.equals(innerArray[0])) {
-                return innerArray[1];
-            }
-
+        if (matcher.find()) {
+            // 匹配值去掉多余部分
+            return matcher.group().replace(keyWithColon, EMPTY_STRING).replace(VERTICAL_BAR, EMPTY_STRING);
         }
 
         return EMPTY_STRING;
