@@ -1,0 +1,19 @@
+# language
+language: java
+
+# jdk
+jdk: oraclejdk8
+
+# install and maven install
+install: true
+script: ./mvnw clean install
+
+# 提高构建速度
+cache:
+  directories:
+  - $HOME/.m2
+
+# 指定分支，只有指定的分支提交时才会运行脚本
+branches:
+  only:
+    - master
