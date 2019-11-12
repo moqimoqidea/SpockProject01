@@ -7,6 +7,11 @@ jdk: openjdk8
 # install and maven install
 install: true
 
+# process codecov 的检查
+script: "mvn cobertura:cobertura"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 547f5cf4-f7e8-462e-b84c-7ef5ccfaa70a
 
 # 提高构建速度
 cache:
@@ -17,3 +22,4 @@ cache:
 branches:
   only:
     - master
+
