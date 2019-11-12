@@ -1,8 +1,8 @@
 # language
 language: java
 
-# jdk
-jdk: oraclejdk8
+# jdk：oraclejdk8 has LICENSE problem
+jdk: openjdk8
 
 # install and maven install
 install: true
