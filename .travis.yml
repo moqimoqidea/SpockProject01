@@ -4,14 +4,20 @@ language: java
 # jdk：oraclejdk8 has LICENSE problem
 jdk: openjdk8
 
+env:
+  CATALINA_BASE=/home/travis
+
+sudo: false
 # install and maven install
 install: true
 
-# process codecov 的检查
-script: "mvn cobertura:cobertura"
+# process maven codecov 的检查
+script:
+  - mvn install
+  - mvn cobertura:cobertura
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t 547f5cf4-f7e8-462e-b84c-7ef5ccfaa70a
+  - bash <(curl -s https://codecov.io/bash)
 
 # 提高构建速度
 cache:
