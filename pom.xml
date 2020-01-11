@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.moqi</groupId>
-    <artifactId>SpockProject01</artifactId>
-    <version>20191123</version>
+    <artifactId>spock-project</artifactId>
+    <version>20200111</version>
     <packaging>jar</packaging>
 
     <!-- 统一管理所有依赖的版本 -->
@@ -209,9 +209,9 @@
     <!-- For Github Package -->
     <distributionManagement>
         <repository>
-            <id>SpockProject01</id>
+            <id>spock-project</id>
             <name>GitHub Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/moqimoqidea/spockproject01</url>
+            <url>https://maven.pkg.github.com/moqimoqidea/spock-project</url>
         </repository>
     </distributionManagement>
 

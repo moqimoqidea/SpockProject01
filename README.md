@@ -1,6 +1,6 @@
 # SpockProject01
-[![Build Status](https://travis-ci.com/moqimoqidea/SpockProject01.svg?branch=master)](https://travis-ci.com/moqimoqidea/SpockProject01)
-[![codecov](https://codecov.io/gh/moqimoqidea/SpockProject01/branch/master/graph/badge.svg)](https://codecov.io/gh/moqimoqidea/SpockProject01)
+[![Build Status](https://travis-ci.com/moqimoqidea/spock-project.svg?branch=master)](https://travis-ci.com/moqimoqidea/spock-project)
+[![codecov](https://codecov.io/gh/moqimoqidea/spock-project/branch/master/graph/badge.svg)](https://codecov.io/gh/moqimoqidea/spock-project)
 
 主要包括的部分有：
 
