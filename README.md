@@ -10,3 +10,4 @@
 * 练习阿里巴巴 arthas 框架时的测试类 MathGame。
 * 测试 Travis CI 的持续集成。
 * 测试 CodeCov 的代码覆盖率测试。
+* 测试 GitHub Package 服务，具体参见[Configuring Apache Maven for use with GitHub Packages](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-apache-maven-for-use-with-github-packages)
