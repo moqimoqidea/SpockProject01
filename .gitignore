@@ -1,3 +1,4 @@
 .idea
 target
-SpockProject01.iml
+*.iml
+.DS_Store
