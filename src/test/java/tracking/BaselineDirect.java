@@ -79,8 +79,8 @@ public class BaselineDirect {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Direct allocation: " + BUFFER.capacity());
-        System.out.println("Native memory used: " + sun.misc.SharedSecrets.getJavaNioAccess().getDirectBufferPool().getMemoryUsed());
-        System.out.println("Max direct memory: " + sun.misc.VM.maxDirectMemory());
+        // System.out.println("Native memory used: " + sun.misc.SharedSecrets.getJavaNioAccess().getDirectBufferPool().getMemoryUsed());
+        // System.out.println("Max direct memory: " + sun.misc.VM.maxDirectMemory());
         Thread.sleep(1000000);
     }
 
